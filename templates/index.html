@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<h1>Index</h1>
+<nav class="nav nav--grid">
+    <ol>
+        {% for subsection_path in section.subsections %}
+        {% set subsection = get_section(path=subsection_path) %}
+        <li><a href="{{ subsection.permalink }}">{{ subsection.title }}</a></li>
+        {% endfor %}
+    </ol>
+</nav>
+{% endblock %}
